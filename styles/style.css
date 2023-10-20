@@ -705,8 +705,8 @@ genre.genre-list {
 		padding-inline-start: var(--chakra-space-4);
 		padding-inline-end: var(--chakra-space-4);
 		height: var(--chakra-sizes-20);
-		background: rgb(0, 0, 0);
-		color: aliceblue;
+		background: #ffd6e6;
+		color: black;
 		border-bottom-width: 1px;
 		border-bottom-color: var(--chakra-colors-gray-200);
 		position: fixed;
@@ -722,25 +722,3 @@ genre.genre-list {
 	}
 }
 
-
-
-/*
-
-p {
-	color: red;
-}
-
-#my-id {
-	width: 500px;
-	border: 1px solid black;
-}
-
-.my-class {
-	color: blue;
-}
-*/
-
-
-/*
-요소:p 같은거 { 속성 : 속성값 ; }
-*/
