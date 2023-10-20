@@ -33,7 +33,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
-		console.log(jsonData);
+		// console.log(jsonData);
 		// let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
 		let cols = ["order", "artist", "song", "genre", "category", "cover_link"];
 		musicbook = jsonData.rows.map((row) => {
@@ -64,7 +64,13 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 			return newRow;
 		});
 
+		musicbook.sort((a, b) => {
+			a = a.order;
+			b = b.order;
+			return b - a;
+		});
 		addOrdered = JSON.parse(JSON.stringify(musicbook));
+		// console.log(addOrdered);
 
 		musicbook.sort((a, b) => {
 			a = a.song.toLowerCase();
