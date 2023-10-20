@@ -130,7 +130,7 @@ formatted-string.sidebar-header-text {
 	letter-spacing: 			-0.05em !important;
 }
 formatted-string.introduction-text {
-    font-family: 'Pretendard-Light';
+    font-family: 'Pretendard-semiBold';
     font-size: var(--chakra-fontSizes-2xl);
     line-height: 2.2rem;
     word-break: keep-all;
@@ -225,12 +225,12 @@ button:hover {
 
 /****************************************       Button Selected     */
 .button-selected {
-	color: white !important;
-	background: black;
+	color: black !important;
+	background: #ffd6e6;
 }
 .button-selected:hover {
-	color: white !important;
-	background: black;
+	color: black !important; 
+	background: #ffd6e6;
 }
 
 /****************************************       Button Wrapper     */
@@ -304,7 +304,7 @@ i#menu-icon {
 	color: black;
 }
 
-
+/****************************************       복사완료       */
 #toast {
     position: fixed;
     bottom: 30px;
@@ -316,8 +316,8 @@ i#menu-icon {
     opacity: 0;
     visibility: hidden;
     transition: opacity .5s, visibility .5s, transform .5s;
-    background: rgba(255, 255, 255, 0.815);
-    color: #000000;
+    background: var(--toast-background);
+    color: var(--toast-text-color);
     z-index: 10000;
 	font-family: 'Pretendard-semiBold';
 	font-size: var(--chakra-fontSizes-2xl);

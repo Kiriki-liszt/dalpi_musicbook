@@ -18,8 +18,10 @@
 
     --item-background: #ffffff99;
     --item-text-color: #000000;
+	--toast-background: #ffd6e6;
+    --toast-text-color: #000000;
 
-    	/* 배경 색 - 그라디언트 */
+	/* 배경 색 - 그라디언트 */
 	--bg-gradient-1:	#9bccfa;
 	--bg-gradient-2:	#b5dbff;
 	--bg-gradient-3:	#ffd6e6;
