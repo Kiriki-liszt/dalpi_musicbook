@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="노래책">
+		<title>노래책</title>
+		<link href="styles/fonts.css" rel="stylesheet" type="text/css">
+		<link href="styles/parameters.css" rel="stylesheet" type="text/css">
+		<link href="styles/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>    
+	</head>
+
+	<body>
+		<div class="base">
+			<!----------------------------------- 본문 -->
+			<div class="main-content" id="mainContent">
+			
+				<!----------------------------------- 랜덤 -->
+				<div class="random-list">
+					<!----------------------------------- 헤더 -->
+					<div class="header-gruop">
+						<h2 class="radom-list-header">
+							<formatted-string class="random-list-title">
+								랜덤 리스트
+							</formatted-string>
+						</h2>
+						<button type="button" class="rnd-button clickable" id="rndBtn" onclick="new_random();" >
+							<formatted-string class="sort-text">
+								DICE!
+							</formatted-string>
+						</button>
+					</div>
+					<!----------------------------------- 본문 -->
+					<div class="content-group">
+						<random class="random-music-list" id="musicListRandom">
+						</random>
+					</div>
+				</div>
+
+				<!----------------------------------- 모든 노래, 검색 결과 -->
+				<div class="main-list">
+					<!----------------------------------- 헤더 -->
+					<div class="header-gruop">
+						<div class="title-group">
+							<!----------------------------------- 헤더 텍스트 -->
+							<h2 class="main-list-header">
+								<formatted-string class="main-list-title">
+									모든 노래
+								</formatted-string>
+							</h2>
+							<!----------------------------------- 검색 영역 -->
+							<div class="search-box">
+								<div class="search-icon">
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</div>
+								<input type="text" id="inputsearch" onkeydown="searchEnter();" oninput="searchUpdate();" placeholder="Search" class="search-text">
+							</div>
+						</div>	
+
+						<!----------------------------------- 헤더 분류 선택자 -->
+						<div class="selector">
+							<!----------------------------------- 대분류 선택자 -->
+							
+							<category>
+							</category>
+							<!----------------------------------- 정렬 선택자 -->
+							<div class="sort-select">
+								<button type="button" class="sort-button clickable" id="byArtist" onclick="sortArtist();" >
+									<formatted-string class="sort-text">
+										가수명순
+										<i class="fa-solid fa-arrow-down-short-wide"></i>
+									</formatted-string>
+								</button>
+								<button type="button" class="sort-button clickable" id="bySong" onclick="sortSong();">
+									<formatted-string class="sort-text">
+										곡명순
+										<i class="fa-solid fa-arrow-down-short-wide"></i>
+									</formatted-string>
+								</button>
+								<button type="button" class="sort-button clickable button-selected" id="byAdd" onclick="sortAdded();">
+									<formatted-string class="sort-text">
+										등록순
+										<i class="fa-solid fa-arrow-down-short-wide"></i>
+									</formatted-string>
+								</button>
+							</div>
+						</div>
+						
+						<!----------------------------------- 헤더 분류 선택자 -->
+						<div class="selector">
+							
+							<!----------------------------------- 장르 목록 -->
+							<genre class="genre-list">
+							</genre>
+						</div>	
+					</div>
+					<!----------------------------------- End - 헤더 -->
+
+					<!----------------------------------- 노래 목록 -->
+					<section class="music-list" id="musicList">
+					</section>
+
+				</div>
+				<!----------------------------------- End - 모든 노래, 검색 결과 -->
+
+			</div>
+			<div id="toast"></div>
+
+			<!----------------------------------- 좌측 사이드바 -->
+			<div class="sidebar-wrapper" id="sidebar-wrapper-id">
+				<div class="sidebar" id="sidebar-id">
+					<!--
+					<button id="button" class="cross-icon">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+					-->
+
+					<!----------------------------------- 사이드바 상단 -->
+					<div class="sidebar-header">
+						<h1 class="sidebar-header-content">
+							<formatted-string class="sidebar-header-text">
+							</formatted-string>
+						</h1>
+					</div>
+					<div class="sidebar-img">
+						<div id="profile-pic" src=""> </div>
+					</div>
+
+					<!----------------------------------- 설명 -->
+					<div class="introduction">
+						<formatted-string class="introduction-text">
+							채팅, 후원, 채널포인트 등 확인 가능한 방법으로 "가수 - 제목" 함께 보내주세요.
+						</formatted-string>
+						<ul>
+							<li>
+								<formatted-string class="introduction-text">
+									노래책에 없는 노래도 합니다
+								</formatted-string>
+							</li>
+							<li>
+								<formatted-string class="introduction-text">
+									추천하고 싶은 노래가 있다면 트게더 노래추천 게시판에 적어주세요. 연습해오겠습니다!
+								</formatted-string>
+							</li>
+							<li>
+								<formatted-string class="introduction-text">
+									노래책을 확인하지 않고 신청 할 시 채널포인트 환불이 불가능합니다.  
+								</formatted-string>
+							</li>
+							<li>
+								<formatted-string class="introduction-text">
+									후두신경을 다쳐서 고음을 내기가 어려워요
+								</formatted-string>
+							</li>
+							<li>
+								<formatted-string class="introduction-text">
+									노래가 너무 높은 경우 음정 조절하여 부릅니다아
+								</formatted-string>
+							</li>
+							<li>
+								<formatted-string class="introduction-text">
+									목상태에 따라 신청을 못받을 수도 있어요
+								</formatted-string>
+							</li>
+							<li>
+								<formatted-string class="introduction-text">
+									노래를 전문적으로 배운적이 없어요! 피드백은 둥글게둥글게~
+								</formatted-string>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+			<!----------------------------------- 모바일 상단바 -->
+			<div class="nav">
+				<div class="nav-head">
+					<h1>
+						<formatted-string class="sidebar-header-text">
+						</formatted-string>
+					</h1>
+				</div>
+				<button type="button" class="menu-button" id="openMenu">
+					<i class="fa-solid fa-bars" id="menu-icon"></i>
+				</button>
+			</div>
+
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			<script src="scripts/google-sheet.js"></script>
+			<script src="scripts/func.js"></script>
+		</div>
+	</body>
+</html> 
