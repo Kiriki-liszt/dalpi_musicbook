@@ -81,8 +81,8 @@ html.darkmode {
 body {
 	margin: 0;
 	background: #00000000;
-	min-height: 100vh; 
-	width: 100vw;
+	min-height: 100dvh; 
+	width: 100dvw;
 }
 
 .sidebar-header-text::after {
@@ -518,11 +518,11 @@ i#menu-icon {
 	flex-wrap: nowrap;
 	margin-left: var(--chakra-sizes-md);
 	--ytmusic-guide-width: var(--chakra-sizes-md);
-	--ytmusic-content-width: min( calc( 100vw - 200px - var(--ytmusic-guide-width) ), 1248px );
+	--ytmusic-content-width: min( calc( 100dvw - 200px - var(--ytmusic-guide-width) ), 1248px );
 }
 .main-hide {
 	overflow: hidden;
-	height: calc(100vh - var(--chakra-space-20));
+	height: calc(100dvh - var(--chakra-space-20));
 }
 .main-list {
     margin: var(--chakra-space-4) 0;
@@ -740,7 +740,7 @@ genre.genre-list {
 		margin-left: 0; 
 		margin-top: var(--chakra-space-20) !important;
 		--ytmusic-guide-width: 0px;
-		--ytmusic-content-width: calc(100vw - 32px - var(--ytmusic-guide-width));
+		--ytmusic-content-width: calc(100dvw - 32px - var(--ytmusic-guide-width));
 	}
 }
 
