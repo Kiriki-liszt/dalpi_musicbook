@@ -119,7 +119,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
-		console.log(jsonData);
+		//console.log(jsonData);
 		let cols = jsonData.cols.map((col) => col.label); // console.log("cols: \n", cols);
 		// let cols = ["order", "artist", "song", "genre", "category", "cover_link"];
 		announcements = jsonData.rows.map((row) => {
@@ -132,7 +132,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 			});
 			return newRow;
 		});
-		console.log(announcements);
+		//console.log(announcements);
 		populateAnnounce(announcements)
 	});
 
@@ -172,8 +172,8 @@ function populateAnnounce(jsonObj) {
 	for (i; i != end; i = i + 1) {
 		var myDiv = document.createElement('formatted-string');
 		myDiv.classList.add("introduction-text");
-		myDiv.textContent = jsonObj[i].A;
-		console.log(jsonObj[i].A);
+		myDiv.textContent = jsonObj[i];
+		console.log(jsonObj[i]);
 		myNode.appendChild(myDiv);
 	}
 }
