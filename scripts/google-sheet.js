@@ -173,7 +173,7 @@ function populateAnnounce(jsonObj) {
 		var myDiv = document.createElement('formatted-string');
 		myDiv.classList.add("introduction-text");
 		myDiv.textContent = jsonObj[i].artist;
-
+		console.log(jsonObj[i].artist);
 		myNode.appendChild(myDiv);
 	}
 }
