@@ -120,7 +120,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
 		console.log(jsonData);
-		// let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
+		let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
 		// let cols = ["order", "artist", "song", "genre", "category", "cover_link"];
 		announcements = jsonData.rows.map((row) => {
 			let newRow;
