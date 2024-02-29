@@ -399,6 +399,11 @@ i#menu-icon {
 	background-image: var(--profile-img);
 	background-size: cover;
 }
+@media screen and (max-width: 1020px) { 
+	#profile-pic {
+		width: 17rem;
+	}
+}
 .introduction {
     padding: 2rem;
     /* margin: 4rem; */
