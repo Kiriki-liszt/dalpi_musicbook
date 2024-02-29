@@ -172,8 +172,8 @@ function populateAnnounce(jsonObj) {
 	for (i; i != end; i = i + 1) {
 		var myDiv = document.createElement('formatted-string');
 		myDiv.classList.add("introduction-text");
-		myDiv.textContent = jsonObj[i].artist;
-		console.log(jsonObj[i].artist);
+		myDiv.textContent = jsonObj[i].A;
+		console.log(jsonObj[i].A);
 		myNode.appendChild(myDiv);
 	}
 }
