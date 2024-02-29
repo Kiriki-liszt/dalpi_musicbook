@@ -22,13 +22,13 @@
     --toast-text-color: #000000;
 
 	/* 배경 색 - 그라디언트 */
-	--bg-gradient-1:	#9bccfa;
-	--bg-gradient-2:	#b5dbff;
-	--bg-gradient-3:	#ffd6e6;
-	--bg-gradient-4:	#deefff;
+	--bg-gradient-1:	#f1bafb;
+	--bg-gradient-2:	#fecdf6;
+	--bg-gradient-3:	#f59ec0;
+	--bg-gradient-4:	#fe7df1;
 	
 
-    --site-name: "루하의 노래책"
+    --site-name: "달피의 노래책"
 }
 
 :root {
