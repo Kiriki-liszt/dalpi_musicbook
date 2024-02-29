@@ -138,11 +138,51 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 });
 
 
+
+
+function populateAnnounce(jsonObj) {
+
+	//var musiclist = jsonObj;
+	/* console.log("populateSection", musiclist); */
+	/* 기존 노래들 클리어 */
+	const myNode = document.getElementById("introduction_");
+	// var announcement = document.querySelector('announcement');
+	//while (myNode.lastElementChild) {
+	//	myNode.removeChild(myNode.lastElementChild);
+	//}
+
+	/* 검색 입력창에 들어와있는거 저장 */
+	//const search_value = document.getElementById("inputsearch").value;
+
+	//var i, end;
+	//if (direction == 1) {
+	//	i = 0;
+	//	end = musiclist.length;
+	//}
+	//else {
+	//	i = musiclist.length - 1;
+	//	end = -1;
+	//}
+
+	var i, end;
+	i = 0;
+	end = jsonObj.length;
+
+	for (i; i != end; i = i + 1) {
+		var myDiv = document.createElement('formatted-string');
+		myDiv.classList.add("introduction-text");
+		myDiv.textContent = jsonObj[i].artist;
+
+		myNode.appendChild(myDiv);
+	}
+}
+
+
+
 function genre_populate(jsonObj) {
 
 	//categories = Array.from(new Set(jsonObj.map(item => item.genre)));
 
-	
 	// console.log(jsonObj);
 	jsonObj.forEach(
 		(item) => {
