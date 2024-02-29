@@ -41,9 +41,11 @@ document.getElementById("openMenu").onclick = function() {
 	var idLeft = document.getElementById("sidebar-id");
 	if (idLeft.classList.contains("sidebar-hide")) {
 		idLeft.classList.remove("sidebar-hide");
+		document.getElementById("mainContent").classList.add("main-hide");
 	}
 	else {
 		idLeft.classList.add("sidebar-hide");
+		document.getElementById("mainContent").classList.remove("main-hide");
 	}
 
 	idLeft = document.getElementById("sidebar-wrapper-id");

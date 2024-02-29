@@ -519,6 +519,10 @@ i#menu-icon {
 	--ytmusic-guide-width: var(--chakra-sizes-md);
 	--ytmusic-content-width: min( calc( 100vw - 200px - var(--ytmusic-guide-width) ), 1248px );
 }
+.main-hide {
+	overflow: hidden;
+	height: calc(100vh - var(--chakra-space-20));
+}
 .main-list {
     margin: var(--chakra-space-4) 0;
 }
