@@ -132,7 +132,8 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 			});
 			return newRow;
 		});
-		console.log(announcements);
+		// console.log(announcements);
+		populateAnnounce(announcements)
 	});
 
 });
