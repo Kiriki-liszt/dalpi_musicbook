@@ -177,7 +177,7 @@ formatted-string.genre-text {
 	}
 	formatted-string.sort-text {
 		font-family: 'Pretendard-Regular';
-		font-size: var(--chakra-fontSizes-xs);
+		font-size: var(--chakra-fontSizes-sm);
 		margin: 0 5px;
 		white-space: nowrap;
 	}
