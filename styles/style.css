@@ -126,7 +126,7 @@ li
 /****************************************       Format Strings  */
 formatted-string.sidebar-header-text {
 	font-family: var(--font-heading);
-	font-size: var(--chakra-fontSizes-4xl);
+	font-size: var(--chakra-fontSizes-5xl);
 	letter-spacing: 			-0.05em !important;
 }
 formatted-string.introduction-text {
@@ -162,6 +162,9 @@ formatted-string.genre-text {
 
 
 @media screen and (max-width: 1020px) { 
+	formatted-string.sidebar-header-text {
+		font-size: var(--chakra-fontSizes-4xl);
+	}
 	formatted-string.category-text {
 		font-family: 'Pretendard-semiBold';
 		font-size: var(--chakra-fontSizes-md);
@@ -382,11 +385,14 @@ i#menu-icon {
 	-webkit-box-pack: justify;
 	justify-content: space-evenly;
 	height: var(--chakra-sizes-28);
-	margin: var(--chakra-space-8);
+	/* margin: var(--chakra-space-8); */
 	flex-direction: column;
 	flex-wrap: nowrap;
 }
 @media screen and (max-width: 1020px) { 
+	.sidebar-header {
+		display: none;
+	}
 	.sidebar-header-content {
 		display: none;
 	}
@@ -398,10 +404,12 @@ i#menu-icon {
 	aspect-ratio: 1;
 	background-image: var(--profile-img);
 	background-size: cover;
+	padding: 3em;
+	margin-top: 3em;;
 }
 @media screen and (max-width: 1020px) { 
 	#profile-pic {
-		width: 17rem;
+		width: 17em;
 	}
 }
 .introduction {
