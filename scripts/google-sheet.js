@@ -71,7 +71,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 			return b - a;
 		});
 		addOrdered = JSON.parse(JSON.stringify(musicbook));
-		// console.log(addOrdered);
+		console.log(addOrdered);
 
 		musicbook.sort((a, b) => {
 			a = a.song.toLowerCase();
@@ -81,7 +81,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 			return 0;
 		});
 		songOrdered = JSON.parse(JSON.stringify(musicbook));
-		// console.log("Song Ordered\n", songOrdered);
+		console.log("Song Ordered\n", songOrdered);
 
 		musicbook.sort((a, b) => {
 			a = a.artist.toLowerCase();
@@ -91,7 +91,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 			return 0;
 		});
 		artistOrdered = JSON.parse(JSON.stringify(musicbook));
-		// console.log("artist Ordered\n", artistOrdered);
+		console.log("artist Ordered\n", artistOrdered);
 
 		category_populate(musicbook);
 		genre_populate(musicbook);
