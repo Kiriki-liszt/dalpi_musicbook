@@ -120,8 +120,8 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
 		//console.log(jsonData);
-		let cols = jsonData.cols.map((col) => col.label); // console.log("cols: \n", cols);
-		// let cols = ["order", "artist", "song", "genre", "category", "cover_link"];
+		// let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
+		let cols = ["announcement"];
 		announcements = jsonData.rows.map((row) => {
 			let newRow;
 			row.c.forEach((obj, index) => {
@@ -170,11 +170,12 @@ function populateAnnounce(jsonObj) {
 	end = jsonObj.length;
 
 	for (i; i != end; i = i + 1) {
-		var myDiv = document.createElement('formatted-string');
-		myDiv.classList.add("introduction-text");
-		myDiv.textContent = jsonObj[i];
-		console.log(jsonObj[i]);
-		myNode.appendChild(myDiv);
+		var list = document.createElement('li');
+		var each = document.createElement('formatted-string');
+		each.classList.add("introduction-text"); 
+		each.textContent = jsonObj[i].announcement;
+		list.appendChild(each);
+		myNode.appendChild(list);
 	}
 }
 
@@ -422,7 +423,7 @@ function populateSection(jsonObj, direction) {
 		infoDiv.classList.add("info-div");
 		infoArtist.classList.add("artist-name");
 		infoSong.classList.add("song-name");
-		infoArtist.textContent = musiclist[i].artist;
+		infoArtist.textContent = musiclist[i].artist; 
 		infoSong.textContent = musiclist[i].song;
 
 		coverDiv.appendChild(coverImg);
