@@ -7,6 +7,7 @@ var random = document.querySelector('random');
 let myKey = "14qErICaQmH8qifkhSEFeKpgjdDrJWYAGk-IZVAe-1DI"; // 스프레드시트 KEY
 
 let noCover = `https://cdn.discordapp.com/attachments/1158397408514932746/1160924994839248926/0_.png`;
+let gid = "1303736034" // 목록이 있는 시트의 gid
 
 var musicbook;
 var addOrdered;
@@ -20,7 +21,7 @@ var genre_selected;
 
 google.charts.load("current", { packages: ["corechart"] }).then(() => {
 	let query = new google.visualization.Query(
-		`https://docs.google.com/spreadsheets/d/${myKey}/gviz/tq?tqx=out:json`
+		`https://docs.google.com/spreadsheets/d/${myKey}/gviz/tq?gid=${gid}&tqx=out:json`
 	);
 
 	query.send((response) => {
