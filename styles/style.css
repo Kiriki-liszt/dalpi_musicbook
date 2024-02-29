@@ -126,7 +126,7 @@ li
 /****************************************       Format Strings  */
 formatted-string.sidebar-header-text {
 	font-family: var(--font-heading);
-	font-size: var(--chakra-fontSizes-5xl);
+	font-size: var(--chakra-fontSizes-4xl);
 	letter-spacing: 			-0.05em !important;
 }
 formatted-string.introduction-text {
@@ -707,7 +707,7 @@ genre.genre-list {
 		height: var(--chakra-sizes-20);
 		background: #ffd6e6;
 		color: black;
-		border-bottom-width: 1px;
+		border-bottom-width: 0px;
 		border-bottom-color: var(--chakra-colors-gray-200);
 		position: fixed;
 		top: 0;
