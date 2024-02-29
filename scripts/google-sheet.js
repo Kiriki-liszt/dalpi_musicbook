@@ -9,6 +9,8 @@ let myKey = "14qErICaQmH8qifkhSEFeKpgjdDrJWYAGk-IZVAe-1DI"; // 스프레드시�
 let noCover = `https://cdn.discordapp.com/attachments/1158397408514932746/1160924994839248926/0_.png`;
 let gid = "1303736034" // 목록이 있는 시트의 gid
 
+var announcements;
+
 var musicbook;
 var addOrdered;
 var artistOrdered;
@@ -20,11 +22,11 @@ let genres = [];
 var genre_selected;
 
 google.charts.load("current", { packages: ["corechart"] }).then(() => {
-	let query = new google.visualization.Query(
+	let query_list = new google.visualization.Query(
 		`https://docs.google.com/spreadsheets/d/${myKey}/gviz/tq?gid=${gid}&tqx=out:json`
 	);
 
-	query.send((response) => {
+	query_list.send((response) => {
 		if (response.isError()) {
 			console.error(
 				"Error in query: " + response.getMessage() + " " + response.getDetailedMessage()
@@ -101,6 +103,38 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 		genre_selected = "";
 		sortAdded();
 	});
+
+
+	let query_announcement = new google.visualization.Query(
+		`https://docs.google.com/spreadsheets/d/${myKey}/gviz/tq?gid=0&tqx=out:json`
+	);
+
+	query_announcement.send((response) => {
+		if (response.isError()) {
+			console.error(
+				"Error in query: " + response.getMessage() + " " + response.getDetailedMessage()
+			);
+			return;
+		}
+
+		let dataTable = response.getDataTable().toJSON(); 
+		let jsonData = JSON.parse(dataTable);
+		console.log(jsonData);
+		// let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
+		// let cols = ["order", "artist", "song", "genre", "category", "cover_link"];
+		announcements = jsonData.rows.map((row) => {
+			let newRow;
+			row.c.forEach((obj, index) => {
+				if (obj == null || obj == undefined) return; //빈값이 경우 정지
+				obj[cols[index]] = "f" in obj ? obj["f"] : obj["v"];
+				["f", "v"].forEach((each) => delete obj[each]);
+				newRow = { ...newRow, ...obj };
+			});
+			return newRow;
+		});
+		console.log(announcements);
+	});
+
 });
 
 
