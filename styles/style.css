@@ -404,8 +404,8 @@ i#menu-icon {
 	aspect-ratio: 1;
 	background-image: var(--profile-img);
 	background-size: cover;
-	padding: 3em;
-	margin-top: 3em;;
+	padding: 2em;
+	margin: 2em;;
 }
 @media screen and (max-width: 1020px) { 
 	#profile-pic {
@@ -413,7 +413,7 @@ i#menu-icon {
 	}
 }
 .introduction {
-    padding: 2rem;
+    padding: 1rem 2rem;
     /* margin: 4rem; */
 }
 
