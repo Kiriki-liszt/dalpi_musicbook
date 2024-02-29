@@ -249,7 +249,7 @@ button:hover {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .sort-select {
 	display: flex;
