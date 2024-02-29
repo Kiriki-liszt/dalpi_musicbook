@@ -4,7 +4,7 @@ var genre = document.querySelector('genre');
 var category = document.querySelector('category');
 var random = document.querySelector('random');
 
-let myKey = "1mCzFdijbvXyE-chn2tUGucSK6PByiup4GVn7ecy-W8Q"; // 스프레드시트 KEY
+let myKey = "14qErICaQmH8qifkhSEFeKpgjdDrJWYAGk-IZVAe-1DI"; // 스프레드시트 KEY
 
 let noCover = `https://cdn.discordapp.com/attachments/1158397408514932746/1160924994839248926/0_.png`;
 
@@ -33,7 +33,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
-		// console.log(jsonData);
+		console.log(jsonData);
 		// let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
 		let cols = ["order", "artist", "song", "genre", "category", "cover_link"];
 		musicbook = jsonData.rows.map((row) => {
