@@ -56,12 +56,8 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 					}
 					else if ((obj.cover_link).substring(0,4) != "http") {
 						obj.cover_link = "https://img.youtube.com/vi/" + obj.cover_link + "/maxresdefault.jpg";
-						
 					}
-					
-
 				}
-
 				newRow = { ...newRow, ...obj };
 			});
 			return newRow;
