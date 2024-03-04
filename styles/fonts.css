@@ -77,3 +77,12 @@
     font-weight:				700;
     font-style:					normal;
 }
+
+@font-face {
+	font-family: 'Noto Color Emoji';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/notocoloremoji/v30/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFabts6diysYTngZPnMC1MfLd4gw.2.woff2) format('woff2');
+	unicode-range: U+2763-2764, U+2665, U+FE0F, U+1f490-1f49f, U+1F5A4, U+1F90D, U+1F90E, U+1F9E1, U+1FA75, U+1FA76, U+1FA77;
+  }

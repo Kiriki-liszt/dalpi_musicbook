@@ -114,7 +114,7 @@ ul {
 	display: flex;
 	flex-direction: column;
 	list-style: disc outside;
-	margin: 0 0 24px;
+	/*margin: 0 0 24px;*/
 	padding: var(--chakra-space-2);
 }
 li 
@@ -164,7 +164,14 @@ formatted-string.genre-text {
 formatted-string.song-price {
 	font-family: emoji;
 }
-
+formatted-string.announcement-sub { 
+	font-family: 'Noto Color Emoji', 'Pretendard-semiBold';
+    font-size: var(--chakra-fontSizes-xl);
+    line-height: 2.0rem;
+    word-break: keep-all;
+    letter-spacing: var(--chakra-letterSpacings-wider);
+}
+  
 
 @media screen and (max-width: 1020px) { 
 	formatted-string.sidebar-header-text {

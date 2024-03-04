@@ -164,15 +164,32 @@ function populateAnnounce(jsonObj) {
 	var i, end;
 	i = 0;
 	end = jsonObj.length;
-
+	var ulist = document.createElement('ul');
 	for (i; i != end; i = i + 1) {
+
+		if (jsonObj[i].announcement.substring(0,2) == "--") {
+			var list_ = document.createElement('ul');
+			while (jsonObj[i].announcement.substring(0,2) == "--") {
+				var each_ = document.createElement('formatted-string');
+				each_.classList.add("announcement-sub");
+				each_.textContent = jsonObj[i].announcement.substring(2);
+				list_.appendChild(each_);
+				i = i + 1;
+			}
+			list.appendChild(list_);
+		}
+		
 		var list = document.createElement('li');
 		var each = document.createElement('formatted-string');
 		each.classList.add("introduction-text"); 
+
+		
+
 		each.textContent = jsonObj[i].announcement;
 		list.appendChild(each);
-		myNode.appendChild(list);
+		ulist.appendChild(list);
 	}
+	myNode.appendChild(ulist);
 }
 
 
