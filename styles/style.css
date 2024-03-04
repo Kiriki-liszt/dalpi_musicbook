@@ -162,7 +162,7 @@ formatted-string.genre-text {
 	margin: 3px 12px;
 }
 formatted-string.song-price {
-	font-family: emoji;
+	font-family: 'Noto Color Emoji';
 }
 formatted-string.announcement-sub { 
 	font-family: 'Noto Color Emoji', 'Pretendard-semiBold';
