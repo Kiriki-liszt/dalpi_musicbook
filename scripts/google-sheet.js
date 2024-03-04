@@ -6,7 +6,7 @@ var random = document.querySelector('random');
 
 let myKey = "14qErICaQmH8qifkhSEFeKpgjdDrJWYAGk-IZVAe-1DI"; // 스프레드시트 KEY
 
-let noCover = `https://cdn.discordapp.com/attachments/1158397408514932746/1160924994839248926/0_.png`;
+let noCover = `/dalpi_musicbook/profile.png`;
 let gid = "1303736034" // 목록이 있는 시트의 gid
 
 var announcements;
@@ -36,7 +36,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 		
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
-		console.log(jsonData);
+		// console.log(jsonData);
 		// let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
 		let cols = ["order", "artist", "song", "genre", "category", "price", "cover_link"];
 		musicbook = jsonData.rows.map((row) => {
@@ -47,7 +47,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 				["f", "v"].forEach((each) => delete obj[each]);
 				
 				if (cols[index] == "genre") {
-					obj.genre = (obj.genre).split("/");
+					obj.genre = (obj.genre).split(",");
 				}
 				// console.log(JSON.stringify(obj.cover_link));
 				if (cols[index] == "cover_link") {
