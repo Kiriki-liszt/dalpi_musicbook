@@ -163,6 +163,10 @@ formatted-string.genre-text {
 }
 formatted-string.song-price {
 	font-family: 'Noto Color Emoji';
+	font-size: var(--chakra-fontSizes-xl);
+	display: flex;
+    justify-content: flex-end;
+    padding: 0.5em;
 }
 formatted-string.announcement-sub { 
 	font-family: 'Noto Color Emoji', 'Pretendard-semiBold';
@@ -468,6 +472,7 @@ i#menu-icon {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
+	transition: all 2s;
 }
 @media screen and (max-width: 1020px) { 
 	.random-song {

@@ -295,7 +295,16 @@ function category_populate(jsonObj) {
 	}
 }
 
-
+function timeout(myDiv, dly) {
+	setTimeout(function () {
+		// Do Something Here
+		// Then recall the parent function to
+		// create a recursive loop.
+		myDiv.style.opacity = `1`;
+		myDiv.style.transition = `1s`;
+		timeout(myDiv, dly);
+	}, dly * 500);
+}
 function getRndInteger(min, max) {
 	return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -314,10 +323,8 @@ function random_select(jsonObj, num) {
 	var i = 0;
 
 	for (i; i < num; i = i + 1) {
-
 		var rnd = getRndInteger(1, musiclist.length);
 
-		
 		for (var j = 0; j < i; j = j + 1) { 
 			while (dup[j] == rnd) {
 				rnd = rnd + 1;
@@ -336,6 +343,7 @@ function random_select(jsonObj, num) {
 		var infoDiv = document.createElement('div');
 		var infoSong = document.createElement('formatted-string');
 		var infoArtist = document.createElement('formatted-string');
+		var infoPrice = document.createElement('formatted-string');
 
 		myDiv.classList.add("random-song");
 		
@@ -350,11 +358,15 @@ function random_select(jsonObj, num) {
 		infoArtist.textContent = musiclist[rnd].artist;
 		infoSong.textContent = musiclist[rnd].song;
 
+		infoPrice.classList.add("song-price");
+		infoPrice.textContent = musiclist[i].price;
+
 		coverDiv.appendChild(coverImg);
 		infoDiv.appendChild(infoSong);
 		infoDiv.appendChild(infoArtist);
 		myDiv.appendChild(coverDiv);
 		myDiv.appendChild(infoDiv);
+		myDiv.appendChild(infoPrice);
 
 		myDiv.classList.add("clickable");
 		myDiv.addEventListener('click', function () {
@@ -365,10 +377,12 @@ function random_select(jsonObj, num) {
 				toast("복사완료");
 			});
 		});
+		myDiv.style.opacity = `0`;
+		
+		timeout(myDiv, i);
 		
 		random.appendChild(myDiv);
 	}
-
 }
 
 function populateSection(jsonObj, direction) {
@@ -445,9 +459,9 @@ function populateSection(jsonObj, direction) {
 		coverDiv.appendChild(coverImg);
 		infoDiv.appendChild(infoSong);
 		infoDiv.appendChild(infoArtist);
-		infoSong.appendChild(infoPrice);
 		myDiv.appendChild(coverDiv);
 		myDiv.appendChild(infoDiv);
+		myDiv.appendChild(infoPrice);
 
 		myDiv.classList.add("clickable");
 		myDiv.addEventListener('click', function () {
