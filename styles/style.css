@@ -161,6 +161,9 @@ formatted-string.genre-text {
 	font-size: var(--chakra-fontSizes-xl);
 	margin: 3px 12px;
 }
+formatted-string.song-price {
+	font-family: emoji;
+}
 
 
 @media screen and (max-width: 1020px) { 

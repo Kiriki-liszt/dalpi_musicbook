@@ -36,7 +36,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
-		// console.log(jsonData);
+		console.log(jsonData);
 		// let cols = jsonData.cols.map((col) => col.label); console.log("cols: \n", cols);
 		let cols = ["order", "artist", "song", "genre", "category", "price", "cover_link"];
 		musicbook = jsonData.rows.map((row) => {
@@ -408,6 +408,7 @@ function populateSection(jsonObj, direction) {
 		var infoDiv = document.createElement('div');
 		var infoSong = document.createElement('formatted-string');
 		var infoArtist = document.createElement('formatted-string');
+		var infoPrice = document.createElement('formatted-string');
 
 		myDiv.classList.add("song-div");
 		
@@ -419,12 +420,15 @@ function populateSection(jsonObj, direction) {
 		infoDiv.classList.add("info-div");
 		infoArtist.classList.add("artist-name");
 		infoSong.classList.add("song-name");
+		infoSong.classList.add("song-price");
 		infoArtist.textContent = musiclist[i].artist; 
 		infoSong.textContent = musiclist[i].song;
+		infoPrice.textContent = musiclist[i].price;
 
 		coverDiv.appendChild(coverImg);
 		infoDiv.appendChild(infoSong);
 		infoDiv.appendChild(infoArtist);
+		infoSong.appendChild(infoPrice);
 		myDiv.appendChild(coverDiv);
 		myDiv.appendChild(infoDiv);
 
