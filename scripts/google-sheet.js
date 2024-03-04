@@ -359,7 +359,7 @@ function random_select(jsonObj, num) {
 		infoSong.textContent = musiclist[rnd].song;
 
 		infoPrice.classList.add("song-price");
-		infoPrice.textContent = musiclist[i].price;
+		infoPrice.textContent = musiclist[rnd].price;
 
 		coverDiv.appendChild(coverImg);
 		infoDiv.appendChild(infoSong);
