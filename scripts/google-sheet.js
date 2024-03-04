@@ -33,7 +33,7 @@ google.charts.load("current", { packages: ["corechart"] }).then(() => {
 			);
 			return;
 		}
-
+		
 		let dataTable = response.getDataTable().toJSON(); 
 		let jsonData = JSON.parse(dataTable);
 		console.log(jsonData);
@@ -366,7 +366,7 @@ function random_select(jsonObj, num) {
 		infoDiv.appendChild(infoArtist);
 		myDiv.appendChild(coverDiv);
 		myDiv.appendChild(infoDiv);
-		myDiv.appendChild(infoPrice);
+		infoSong.appendChild(infoPrice);
 
 		myDiv.classList.add("clickable");
 		myDiv.addEventListener('click', function () {
@@ -461,7 +461,7 @@ function populateSection(jsonObj, direction) {
 		infoDiv.appendChild(infoArtist);
 		myDiv.appendChild(coverDiv);
 		myDiv.appendChild(infoDiv);
-		myDiv.appendChild(infoPrice);
+		infoSong.appendChild(infoPrice);
 
 		myDiv.classList.add("clickable");
 		myDiv.addEventListener('click', function () {
