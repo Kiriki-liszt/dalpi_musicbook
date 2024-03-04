@@ -420,7 +420,7 @@ function populateSection(jsonObj, direction) {
 		infoDiv.classList.add("info-div");
 		infoArtist.classList.add("artist-name");
 		infoSong.classList.add("song-name");
-		infoSong.classList.add("song-price");
+		infoPrice.classList.add("song-price");
 		infoArtist.textContent = musiclist[i].artist; 
 		infoSong.textContent = musiclist[i].song;
 		infoPrice.textContent = musiclist[i].price;
