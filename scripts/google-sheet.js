@@ -324,7 +324,10 @@ function random_select(jsonObj, num) {
 
 	for (i; i < num; i = i + 1) {
 		var rnd = getRndInteger(1, musiclist.length);
-
+		var vv = document.getElementById("boom-percent").value;
+		var boom = Math.random() * 100.0;
+		console.log(vv);
+		console.log(boom);
 		for (var j = 0; j < i; j = j + 1) { 
 			while (dup[j] == rnd) {
 				rnd = rnd + 1;
@@ -367,6 +370,12 @@ function random_select(jsonObj, num) {
 		myDiv.appendChild(coverDiv);
 		myDiv.appendChild(infoDiv);
 		infoSong.appendChild(infoPrice);
+
+		if (vv > boom) {
+			infoSong.textContent = "달피가 낼룸 먹어버림!";
+			infoArtist.textContent = "원래는 '" + musiclist[rnd].song + "'";
+			coverImg.src = noCover;
+		}
 
 		myDiv.classList.add("clickable");
 		myDiv.addEventListener('click', function () {
