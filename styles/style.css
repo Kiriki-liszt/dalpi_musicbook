@@ -125,6 +125,10 @@ li
 	text-align: left;
 }
 
+
+.rnd-button {
+	height: var(--chakra-sizes-10);
+}
 .random-roll {
 	display: flex;
     flex-direction: row;
@@ -154,7 +158,7 @@ li
 }
 @media screen and (max-width: 1020px) { 
 	.boom-box {
-		font-size: var(--chakra-fontSizes-lg);
+		font-size: var(--chakra-fontSizes-sm);
 	}
 	#boom-percent {
 		width: 2em;
@@ -242,6 +246,9 @@ formatted-string.announcement-sub {
 		font-family: 'Pretendard-Regular';
 		font-size: var(--chakra-fontSizes-sm);
 		margin: 3px 6px;
+	}
+	formatted-string.rnd-text {
+		font-size: var(--chakra-fontSizes-xl);
 	}
 }
 
