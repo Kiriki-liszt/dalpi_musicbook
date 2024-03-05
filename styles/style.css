@@ -125,6 +125,42 @@ li
 	text-align: left;
 }
 
+.random-roll {
+	display: flex;
+    flex-direction: row;
+	align-items: center;
+}
+.boom-box {
+	display: flex;
+    flex-direction: row;
+	align-items: center;
+    color: white;
+    background: #00000009;
+	font-family: var(--font-sans-light);
+	font-size: var(--chakra-fontSizes-xl);
+	margin-right: 1em;
+	border-radius: var(--chakra-radii-md);
+	border-width: 1px;
+	border-style: solid;
+	border-image: initial;
+	border-color: white;
+	height: var(--chakra-sizes-10);
+	padding: 0.7em;
+}
+#boom-percent {
+	background: transparent;
+	width: 3em;
+	text-align: center;
+}
+@media screen and (max-width: 1020px) { 
+	.boom-box {
+		font-size: var(--chakra-fontSizes-lg);
+	}
+	#boom-percent {
+		width: 2em;
+	}
+}
+
 /****************************************       Format Strings  */
 formatted-string.sidebar-header-text {
 	font-family: var(--font-heading);
@@ -207,34 +243,6 @@ formatted-string.announcement-sub {
 		font-size: var(--chakra-fontSizes-sm);
 		margin: 3px 6px;
 	}
-}
-
-.random-roll {
-	display: flex;
-    flex-direction: row;
-	align-items: center;
-}
-.boom-box {
-	display: flex;
-    flex-direction: row;
-	align-items: center;
-    color: white;
-    background: #00000009;
-	font-family: var(--font-sans-light);
-	font-size: var(--chakra-fontSizes-xl);
-	margin-right: 1em;
-	border-radius: var(--chakra-radii-md);
-	border-width: 1px;
-	border-style: solid;
-	border-image: initial;
-	border-color: white;
-	height: var(--chakra-sizes-10);
-	padding: 0.7em;
-}
-#boom-percent {
-	background: transparent;
-	width: 3em;
-	text-align: center;
 }
 
 
