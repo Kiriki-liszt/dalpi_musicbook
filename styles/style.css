@@ -161,6 +161,11 @@ formatted-string.genre-text {
 	font-size: var(--chakra-fontSizes-xl);
 	margin: 3px 12px;
 }
+formatted-string.rnd-text {
+	font-size: var(--chakra-fontSizes-2xl);
+	margin: 0 12px;
+	white-space: nowrap;
+}
 formatted-string.song-price {
 	font-family: 'Noto Color Emoji';
 	font-size: var(--chakra-fontSizes-xl);
@@ -249,11 +254,11 @@ button:hover {
 /****************************************       Button Selected     */
 .button-selected {
 	color: black !important;
-	background: #ffd6e6;
+	background: var(--item-background);
 }
 .button-selected:hover {
 	color: black !important; 
-	background: #ffd6e6;
+	background: var(--item-background);
 }
 
 /****************************************       Button Wrapper     */
@@ -277,6 +282,7 @@ button:hover {
 	background: rgba(255,255,255,0.1);
 	color: #fff;
 	margin: 0 var(--chakra-space-2);
+	border-width: 1px;
 }
 
 
